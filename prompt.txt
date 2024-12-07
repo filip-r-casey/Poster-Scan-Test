@@ -1,0 +1,79 @@
+I'm trying to port an application I made to scan concert posters for data from python to java.
+The original application relies on some manuals steps, and some steps performed in a jupyter
+notebook. As a result I'm interested in turning this sequence into a production ready application.
+
+Here are the manuals steps that I've been taking:
+1. Using gallery-dl to download some photos from an instagram page
+2. Flattening the folders to get all photos in one directory
+3. Filtering out any non images
+4. Resizing all images to 150x150px to reduce processing costs.
+
+The Jupyter Noteboook then takes these steps:
+
+def encode_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode("utf-8")
+
+image_path = "../../posters/d3/"
+
+results = []
+
+for filename in os.listdir(image_path):
+    if not filename.endswith(".jpg") or filename.endswith(".jpeg"):
+        continue
+    base64_image = encode_image(image_path + filename)
+
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}"
+    }
+
+    payload = {
+        "model": "gpt-4o-mini",
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": """Based on this concert poster can you find the bands who are playing (convert band names to lowercase with underscores replacing spaces), the date, the venue, the doors time, show time, cost, and age requirement (encode like this: "no age requirement"->0, "16+"->16, "18+"->18, "21+"->21. could you also format that information into a json with this format and just print the json:"{
+    "title": null,
+    "date": "2024-09-07",
+    "venue": "D3 Arts",
+    "bands": [
+        "band_name",
+        "band_name"
+    ],
+    "doors_time": "07:00:00",
+    "show_start_time": "07:00:00",
+    "cost": "0.00",
+    "age_requirement": 0,
+    "description": ""
+}" If the image doesn't appear to be a poster just return an empty json."""
+                    },
+                    {
+                        "type": "image_url",
+                        "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"},
+                    }
+                ]
+            }
+        ],
+        "max_tokens": 300,
+    }
+
+    response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+    time.sleep(5)
+    try:
+        results.append({filename : response.json()})
+    except: pass
+
+data = {}
+for result in results[:-1]:
+    print(list(result.values())[0])
+    data[list(result.keys())[0]] = list(result.values())[0]["choices"][0]["message"]["content"]
+
+import json
+with open('data.json', 'w') as f:
+    json.dump(results, f)
+
+How would you suggest I structure this in a java application.

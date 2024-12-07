@@ -1,0 +1,139 @@
+[ {
+  "date" : "",
+  "venue" : {
+    "address" : "",
+    "website" : "",
+    "db_name" : "",
+    "stylized_name" : "",
+    "address_protected" : false
+  },
+  "cost" : "0.00",
+  "description" : "",
+  "title" : null,
+  "bands" : [ {
+    "genre" : "",
+    "biography" : "",
+    "website" : "",
+    "active" : true,
+    "db_name" : "",
+    "stylized_name" : "",
+    "music_link" : "",
+    "contact_email" : "",
+    "instagram_username" : "",
+    "twitter_username" : "",
+    "tiktok_username" : "",
+    "is_active" : true
+  } ],
+  "doors_time" : "",
+  "show_start_time" : "",
+  "age_requirement" : 0
+}, {
+  "date" : null,
+  "venue" : null,
+  "cost" : null,
+  "description" : null,
+  "title" : null,
+  "bands" : null,
+  "doors_time" : null,
+  "show_start_time" : null,
+  "age_requirement" : 0
+}, {
+  "date" : null,
+  "venue" : null,
+  "cost" : null,
+  "description" : null,
+  "title" : null,
+  "bands" : null,
+  "doors_time" : null,
+  "show_start_time" : null,
+  "age_requirement" : 0
+}, {
+  "date" : null,
+  "venue" : null,
+  "cost" : null,
+  "description" : null,
+  "title" : null,
+  "bands" : null,
+  "doors_time" : null,
+  "show_start_time" : null,
+  "age_requirement" : 0
+}, {
+  "date" : null,
+  "venue" : null,
+  "cost" : null,
+  "description" : null,
+  "title" : null,
+  "bands" : null,
+  "doors_time" : null,
+  "show_start_time" : null,
+  "age_requirement" : 0
+}, {
+  "date" : null,
+  "venue" : null,
+  "cost" : null,
+  "description" : null,
+  "title" : null,
+  "bands" : null,
+  "doors_time" : null,
+  "show_start_time" : null,
+  "age_requirement" : 0
+}, {
+  "date" : "2023-10-25",
+  "venue" : {
+    "address" : "3632 Morrison Road",
+    "website" : "",
+    "db_name" : "d3_arts",
+    "stylized_name" : "D3 Arts",
+    "address_protected" : false
+  },
+  "cost" : "0.00",
+  "description" : "Second Annual Fundraiser",
+  "title" : null,
+  "bands" : [ {
+    "genre" : "",
+    "biography" : "",
+    "website" : "",
+    "active" : false,
+    "db_name" : "",
+    "stylized_name" : "",
+    "music_link" : "",
+    "contact_email" : "",
+    "instagram_username" : "",
+    "twitter_username" : "",
+    "tiktok_username" : "",
+    "is_active" : false
+  } ],
+  "doors_time" : "17:00:00",
+  "show_start_time" : "17:00:00",
+  "age_requirement" : 0
+}, {
+  "date" : null,
+  "venue" : null,
+  "cost" : null,
+  "description" : null,
+  "title" : null,
+  "bands" : null,
+  "doors_time" : null,
+  "show_start_time" : null,
+  "age_requirement" : 0
+}, {
+  "date" : null,
+  "venue" : null,
+  "cost" : null,
+  "description" : null,
+  "title" : null,
+  "bands" : null,
+  "doors_time" : null,
+  "show_start_time" : null,
+  "age_requirement" : 0
+}, {
+  "date" : null,
+  "venue" : null,
+  "cost" : null,
+  "description" : null,
+  "title" : null,
+  "bands" : null,
+  "doors_time" : null,
+  "show_start_time" : null,
+  "age_requirement" : 0
+} ]
